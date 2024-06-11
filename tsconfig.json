@@ -1,0 +1,35 @@
+// TypeScript 项目配置文件，用于配置 TS 编译器的行为和选项
+// @see: https://www.tslang.cn/docs/handbook/tsconfig-json.html
+{
+  /** 编译器配置 */
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@": ["src"],
+      "@/*": ["src/*"]
+    },
+    "target": "ES2020", // 编译后的 JavaScript 版本
+    "useDefineForClassFields": true, // 使用类字段定义语法
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // 使用的标准库
+    "module": "ESNext", // 模块类型为 ESNext
+    "skipLibCheck": true, // 跳过对引入的库的类型检查
+    "allowJs": true, // 允许编译 JavaScript 文件
+    "noImplicitAny": false, // 关闭隐式 any 类型的检查
+
+    /* 打包模式 Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true, // 允许导入 TypeScript 扩展名的文件
+    "resolveJsonModule": true, // 启用 JSON 模块解析
+    "isolatedModules": true, // 启用独立模块模式
+    "noEmit": true, // 不生成输出文件
+    "jsx": "react-jsx", // 使用 React JSX 语法
+
+    /* 语法校验 Linting */
+    "strict": true, // 启用严格模式
+    "noUnusedLocals": true, // 允许存在未使用的局部变量
+    "noUnusedParameters": true, // 允许存在未使用的函数参数
+    "noFallthroughCasesInSwitch": true // 禁止在 switch 语句中的 case 语句中出现贯穿
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
